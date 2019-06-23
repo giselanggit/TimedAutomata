@@ -1,0 +1,2227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Place global declarations here.
+
+chan n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,
+     n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, 
+     n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,
+     n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, 
+     n41, n42, n43, n44;
+</declaration>
+	<template>
+		<name x="5" y="5">C1S</name>
+		<declaration>// Place local declarations here.
+clock TC1S;</declaration>
+		<location id="id0" x="280" y="68">
+			<name x="270" y="34">C1SG2</name>
+			<label kind="invariant" x="270" y="85">TC1S &lt;= 3</label>
+		</location>
+		<location id="id1" x="76" y="221">
+			<name x="51" y="178">C1SG3</name>
+			<label kind="invariant" x="66" y="238">TC1S &lt;= 10</label>
+		</location>
+		<location id="id2" x="-170" y="68">
+			<name x="-180" y="34">C1SY</name>
+			<label kind="invariant" x="-204" y="85">TC1S &lt;= 10</label>
+		</location>
+		<location id="id3" x="76" y="68">
+			<name x="66" y="34">C1SG</name>
+			<label kind="invariant" x="66" y="85">TC1S &lt;= 10</label>
+		</location>
+		<location id="id4" x="76" y="-119">
+			<name x="66" y="-153">C1SRY</name>
+			<label kind="invariant" x="102" y="-127">TC1S &lt;= 3</label>
+		</location>
+		<location id="id5" x="-170" y="-119">
+			<name x="-180" y="-153">C1SR</name>
+			<label kind="invariant" x="-263" y="-110">TC1S &lt;= 101</label>
+		</location>
+		<init ref="id3"/>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="guard" x="153" y="170">TC1S &gt;= 3</label>
+			<label kind="synchronisation" x="144" y="136">n6?</label>
+			<label kind="assignment" x="187" y="144">TC1S := 0</label>
+			<nail x="178" y="144"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id0"/>
+			<label kind="guard" x="161" y="42">TC1S &gt;= 10</label>
+			<label kind="synchronisation" x="187" y="68">n3?</label>
+			<label kind="assignment" x="170" y="85">TC1S := 0</label>
+			<nail x="195" y="68"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-102" y="93">TC1S &gt;= 10</label>
+			<label kind="synchronisation" x="-51" y="110">n7?</label>
+			<label kind="assignment" x="-34" y="127">TC1S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id5"/>
+			<label kind="guard" x="-170" y="-59">TC1S &gt;= 3</label>
+			<label kind="synchronisation" x="-161" y="-42">n9?</label>
+			<label kind="assignment" x="-170" y="-25">TC1S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<label kind="guard" x="0" y="-59">TC1S &gt;= 3</label>
+			<label kind="synchronisation" x="85" y="-42">n43?</label>
+			<label kind="assignment" x="8" y="-34">TC1S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id4"/>
+			<label kind="guard" x="-68" y="-119">TC1S &gt;= 10</label>
+			<label kind="synchronisation" x="-68" y="-144">n41?</label>
+			<label kind="assignment" x="-152" y="-119">TC1S := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>C1R</name>
+		<declaration>clock TC1R;</declaration>
+		<location id="id6" x="-255" y="17">
+			<name x="-265" y="-17">C1RY</name>
+			<label kind="invariant" x="-265" y="34">TC1R &lt;= 3</label>
+		</location>
+		<location id="id7" x="0" y="-144">
+			<name x="-10" y="-178">C1RRY</name>
+			<label kind="invariant" x="25" y="-144">TC1R &lt;= 3</label>
+		</location>
+		<location id="id8" x="-255" y="-144">
+			<name x="-265" y="-178">C1RR</name>
+			<label kind="invariant" x="-348" y="-136">TC1R &lt;= 114</label>
+		</location>
+		<location id="id9" x="0" y="17">
+			<name x="8" y="-17">C1RG</name>
+			<label kind="invariant" x="-10" y="34">TC1R &lt;= 10</label>
+		</location>
+		<init ref="id9"/>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-255" y="-97">TC1R &gt;= 3</label>
+			<label kind="synchronisation" x="-255" y="-80">n4?</label>
+			<label kind="assignment" x="-255" y="-63">TC1R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-136" y="-8">TC1R &gt;= 10</label>
+			<label kind="synchronisation" x="-187" y="-8">n1?</label>
+			<label kind="assignment" x="-161" y="17">TC1R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id9"/>
+			<label kind="guard" x="0" y="-97">TC1R &gt;= 3</label>
+			<label kind="synchronisation" x="0" y="-80">n43!</label>
+			<label kind="assignment" x="0" y="-63">TC1R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-212" y="-161">TC1R &gt;= 10</label>
+			<label kind="synchronisation" x="-110" y="-161">n41!</label>
+			<label kind="assignment" x="-170" y="-144">TC1R := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B1L</name>
+		<declaration>clock TB1L;</declaration>
+		<location id="id10" x="-8" y="-161">
+			<name x="-18" y="-195">B1LRY</name>
+			<label kind="invariant" x="-18" y="-144">TB1L &lt;= 3</label>
+		</location>
+		<location id="id11" x="-246" y="-161">
+			<name x="-256" y="-195">B1LR</name>
+			<label kind="invariant" x="-256" y="-144">TB1L &lt;= 114</label>
+		</location>
+		<location id="id12" x="-246" y="8">
+			<name x="-256" y="-26">B1LY</name>
+			<label kind="invariant" x="-256" y="25">TB1L &lt;= 3</label>
+		</location>
+		<location id="id13" x="-8" y="8">
+			<name x="-18" y="-26">B1LG</name>
+			<label kind="invariant" x="-18" y="25">TB1L &lt;= 10</label>
+		</location>
+		<init ref="id11"/>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-246" y="-110">TB1L &gt;= 3</label>
+			<label kind="synchronisation" x="-246" y="-93">n13?</label>
+			<label kind="assignment" x="-246" y="-76">TB1L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id12"/>
+			<label kind="guard" x="-153" y="-17">TB1L &gt;= 10</label>
+			<label kind="synchronisation" x="-228" y="-9">n11?</label>
+			<label kind="assignment" x="-228" y="8">TB1L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id13"/>
+			<label kind="guard" x="-8" y="-110">TB1L &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-93">n9!</label>
+			<label kind="assignment" x="-8" y="-76">TB1L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id10"/>
+			<label kind="guard" x="-178" y="-187">TB1L &gt;= 10</label>
+			<label kind="synchronisation" x="-228" y="-178">n7!</label>
+			<label kind="assignment" x="-228" y="-161">TB1L := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B1S</name>
+		<declaration>clock TB1S;</declaration>
+		<location id="id14" x="-8" y="-153">
+			<name x="-18" y="-187">B1SRY</name>
+			<label kind="invariant" x="-18" y="-136">TB1S &lt;= 3</label>
+		</location>
+		<location id="id15" x="-246" y="-153">
+			<name x="-256" y="-187">B1SR</name>
+			<label kind="invariant" x="-256" y="-136">TB1S &lt;= 101</label>
+		</location>
+		<location id="id16" x="-246" y="8">
+			<name x="-256" y="-26">B1SY</name>
+			<label kind="invariant" x="-256" y="25">TB1S &lt;= 3</label>
+		</location>
+		<location id="id17" x="-8" y="8">
+			<name x="-18" y="-26">B1SG</name>
+			<label kind="invariant" x="-18" y="25">TB1S &lt;= 23</label>
+		</location>
+		<init ref="id15"/>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-246" y="-106">TB1S &gt;= 3</label>
+			<label kind="synchronisation" x="-246" y="-89">n13!</label>
+			<label kind="assignment" x="-246" y="-72">TB1S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id16"/>
+			<label kind="guard" x="-161" y="-17">TB1S &gt;= 10</label>
+			<label kind="synchronisation" x="-228" y="-9">n11!</label>
+			<label kind="assignment" x="-161" y="17">TB1S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id17"/>
+			<label kind="guard" x="-8" y="-106">TB1S &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-89">n4!</label>
+			<label kind="assignment" x="-8" y="-72">TB1S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="guard" x="-170" y="-178">TB1S &gt;= 10</label>
+			<label kind="synchronisation" x="-228" y="-170">n1!</label>
+			<label kind="assignment" x="-228" y="-153">TB1S := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B1R</name>
+		<declaration>clock TB1R;</declaration>
+		<location id="id18" x="-8" y="-153">
+			<name x="-18" y="-187">B1RRY</name>
+			<label kind="invariant" x="-18" y="-136">TB1R &lt;= 3</label>
+		</location>
+		<location id="id19" x="-229" y="-153">
+			<name x="-239" y="-187">B1RR</name>
+			<label kind="invariant" x="-239" y="-136">TB1R &lt;= 114</label>
+		</location>
+		<location id="id20" x="-229" y="8">
+			<name x="-239" y="-26">B1RY</name>
+			<label kind="invariant" x="-239" y="25">TB1R &lt;= 3</label>
+		</location>
+		<location id="id21" x="-8" y="8">
+			<name x="-18" y="-26">B1RG</name>
+			<label kind="invariant" x="-18" y="25">TB1R &lt;= 10</label>
+		</location>
+		<init ref="id21"/>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-229" y="-106">TB1R &gt;= 3</label>
+			<label kind="synchronisation" x="-229" y="-89">n5?</label>
+			<label kind="assignment" x="-229" y="-72">TB1R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id20"/>
+			<label kind="guard" x="-170" y="-17">TB1R &gt;= 10</label>
+			<label kind="synchronisation" x="-211" y="-9">n2?</label>
+			<label kind="assignment" x="-211" y="8">TB1R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id21"/>
+			<label kind="guard" x="-8" y="-106">TB1R &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-89">n44?</label>
+			<label kind="assignment" x="-8" y="-72">TB1R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-178" y="-178">TB1R &gt;= 10</label>
+			<label kind="synchronisation" x="-211" y="-170">n42?</label>
+			<label kind="assignment" x="-211" y="-153">TB1R := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>C2S</name>
+		<declaration>clock TC2S;</declaration>
+		<location id="id22" x="-255" y="187">
+			<name x="-265" y="153">C2SG3</name>
+			<label kind="invariant" x="-265" y="204">TC2S &lt;= 23</label>
+		</location>
+		<location id="id23" x="0" y="187">
+			<name x="-10" y="153">C2SG2</name>
+			<label kind="invariant" x="-8" y="204">TC2S &lt;= 3</label>
+		</location>
+		<location id="id24" x="-255" y="34">
+			<name x="-265" y="0">C2SY</name>
+			<label kind="invariant" x="-265" y="51">TC2S &lt;= 3</label>
+		</location>
+		<location id="id25" x="0" y="-136">
+			<name x="-10" y="-170">C2SRY</name>
+			<label kind="invariant" x="-10" y="-119">TC2S &lt;= 3</label>
+		</location>
+		<location id="id26" x="-255" y="-136">
+			<name x="-265" y="-170">C2SR</name>
+			<label kind="invariant" x="-265" y="-119">TC2S &lt;= 88</label>
+		</location>
+		<location id="id27" x="0" y="34">
+			<name x="-10" y="0">C2SG</name>
+			<label kind="invariant" x="17" y="34">TC2S &lt;= 10</label>
+		</location>
+		<init ref="id26"/>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id22"/>
+			<label kind="guard" x="-195" y="161">TC2S &gt;= 3</label>
+			<label kind="synchronisation" x="-119" y="161">n10?</label>
+			<label kind="assignment" x="-85" y="161">TC2S := 0</label>
+			<nail x="-93" y="187"/>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id23"/>
+			<label kind="guard" x="-76" y="85">TC2S &gt;= 10</label>
+			<label kind="synchronisation" x="-34" y="102">n8?</label>
+			<label kind="assignment" x="-68" y="59">TC2S := 0</label>
+			<nail x="0" y="119"/>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id26"/>
+			<label kind="guard" x="-255" y="-85">TC2S &gt;= 3</label>
+			<label kind="synchronisation" x="-255" y="-68">n17?</label>
+			<label kind="assignment" x="-255" y="-51">TC2S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id24"/>
+			<label kind="guard" x="-348" y="93">TC2S &gt;= 10</label>
+			<label kind="synchronisation" x="-314" y="68">n15?</label>
+			<label kind="assignment" x="-331" y="119">TC2S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id27"/>
+			<label kind="guard" x="0" y="-85">TC2S &gt;= 3</label>
+			<label kind="synchronisation" x="0" y="-68">n5!</label>
+			<label kind="assignment" x="0" y="-51">TC2S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-170" y="-161">TC2S &gt;= 10</label>
+			<label kind="synchronisation" x="-237" y="-153">n2!</label>
+			<label kind="assignment" x="-237" y="-136">TC2S := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>C2R</name>
+		<declaration>clock TC2R;</declaration>
+		<location id="id28" x="-272" y="17">
+			<name x="-282" y="-17">C2RY</name>
+			<label kind="invariant" x="-282" y="34">TC2R &lt;= 3</label>
+		</location>
+		<location id="id29" x="0" y="-144">
+			<name x="-10" y="-178">C2RRY</name>
+			<label kind="invariant" x="-10" y="-127">TC2R &lt;= 3</label>
+		</location>
+		<location id="id30" x="-272" y="-144">
+			<name x="-282" y="-178">C2RR</name>
+			<label kind="invariant" x="-282" y="-127">TC2R &lt;= 114</label>
+		</location>
+		<location id="id31" x="0" y="17">
+			<name x="-10" y="-17">C2RG</name>
+			<label kind="invariant" x="-10" y="34">TC2R &lt;= 10</label>
+		</location>
+		<init ref="id30"/>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id30"/>
+			<label kind="guard" x="-272" y="-97">TC2R &gt;= 3</label>
+			<label kind="synchronisation" x="-272" y="-80">n17!</label>
+			<label kind="assignment" x="-272" y="-63">TC2R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id28"/>
+			<label kind="guard" x="-161" y="-8">TC2R &gt;= 10</label>
+			<label kind="synchronisation" x="-255" y="0">n15!</label>
+			<label kind="assignment" x="-254" y="17">TC2R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id31"/>
+			<label kind="guard" x="0" y="-97">TC2R &gt;= 3</label>
+			<label kind="synchronisation" x="0" y="-80">n14?</label>
+			<label kind="assignment" x="0" y="-63">TC2R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id29"/>
+			<label kind="guard" x="-178" y="-170">TC2R &gt;= 10</label>
+			<label kind="synchronisation" x="-254" y="-161">n12?</label>
+			<label kind="assignment" x="-254" y="-144">TC2R := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B2L</name>
+		<declaration>clock TB2L;</declaration>
+		<location id="id32" x="-8" y="-161">
+			<name x="-18" y="-195">B2LRY</name>
+			<label kind="invariant" x="-18" y="-144">TB2L &lt;= 3</label>
+		</location>
+		<location id="id33" x="-255" y="-161">
+			<name x="-265" y="-195">B2LR</name>
+			<label kind="invariant" x="-265" y="-144">TB2L &lt;= 114</label>
+		</location>
+		<location id="id34" x="-255" y="8">
+			<name x="-265" y="-26">B2LY</name>
+			<label kind="invariant" x="-265" y="25">TB2L &lt;= 3</label>
+		</location>
+		<location id="id35" x="-8" y="8">
+			<name x="-18" y="-26">B2LG</name>
+			<label kind="invariant" x="-18" y="25">TB2L &lt;= 10</label>
+		</location>
+		<init ref="id33"/>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id33"/>
+			<label kind="guard" x="-255" y="-110">TB2L &gt;= 3</label>
+			<label kind="synchronisation" x="-255" y="-93">n21?</label>
+			<label kind="assignment" x="-255" y="-76">TB2L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id34"/>
+			<label kind="guard" x="-153" y="-17">TB2L &gt;= 10</label>
+			<label kind="synchronisation" x="-237" y="-9">n19?</label>
+			<label kind="assignment" x="-237" y="8">TB2L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id35"/>
+			<label kind="guard" x="-8" y="-110">TB2L &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-93">n18?</label>
+			<label kind="assignment" x="-8" y="-76">TB2L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id32"/>
+			<label kind="guard" x="-161" y="-187">TB2L &gt;= 10</label>
+			<label kind="synchronisation" x="-237" y="-178">n16?</label>
+			<label kind="assignment" x="-237" y="-161">TB2L := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B2S</name>
+		<declaration>clock TB2S;</declaration>
+		<location id="id36" x="-8" y="-161">
+			<name x="-18" y="-195">B2SRY</name>
+			<label kind="invariant" x="-18" y="-144">TB2S &lt;= 3</label>
+		</location>
+		<location id="id37" x="-263" y="-161">
+			<name x="-273" y="-195">B2SR</name>
+			<label kind="invariant" x="-273" y="-144">TB2S &lt;= 114</label>
+		</location>
+		<location id="id38" x="-263" y="8">
+			<name x="-273" y="-26">B2SY</name>
+			<label kind="invariant" x="-273" y="25">TB2S &lt;= 3</label>
+		</location>
+		<location id="id39" x="-8" y="8">
+			<name x="-18" y="-26">B2SG</name>
+			<label kind="invariant" x="-18" y="25">TB2S &lt;= 10</label>
+		</location>
+		<init ref="id37"/>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id37"/>
+			<label kind="guard" x="-263" y="-110">TB2S &gt;= 3</label>
+			<label kind="synchronisation" x="-263" y="-93">n10!</label>
+			<label kind="assignment" x="-263" y="-76">TB2S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id38"/>
+			<label kind="guard" x="-246" y="-17">TB2S &gt;= 10</label>
+			<label kind="synchronisation" x="-170" y="-17">n8!</label>
+			<label kind="assignment" x="-127" y="-17">TB2S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id39"/>
+			<label kind="guard" x="-85" y="-102">TB2S &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-93">n6!</label>
+			<label kind="assignment" x="-76" y="-76">TB2S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id36"/>
+			<label kind="guard" x="-153" y="-161">TB2S &gt;= 10</label>
+			<label kind="synchronisation" x="-144" y="-187">n3!</label>
+			<label kind="assignment" x="-245" y="-161">TB2S := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B2R</name>
+		<declaration>clock TB2R;</declaration>
+		<location id="id40" x="-8" y="-153">
+			<name x="-18" y="-187">B2RRY</name>
+			<label kind="invariant" x="-18" y="-136">TB2R &lt;= 3</label>
+		</location>
+		<location id="id41" x="-263" y="-153">
+			<name x="-273" y="-187">B2RR</name>
+			<label kind="invariant" x="-273" y="-136">TB2R &lt;= 114</label>
+		</location>
+		<location id="id42" x="-263" y="0">
+			<name x="-273" y="-34">B2RY</name>
+			<label kind="invariant" x="-273" y="17">TB2R &lt;= 3</label>
+		</location>
+		<location id="id43" x="-8" y="0">
+			<name x="-18" y="-34">B2RG</name>
+			<label kind="invariant" x="-18" y="17">TB2R &lt;= 10</label>
+		</location>
+		<init ref="id41"/>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id41"/>
+			<label kind="guard" x="-263" y="-110">TB2R &gt;= 3</label>
+			<label kind="synchronisation" x="-263" y="-93">n18!</label>
+			<label kind="assignment" x="-263" y="-76">TB2R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id42"/>
+			<label kind="guard" x="-161" y="-25">TB2R &gt;= 10</label>
+			<label kind="synchronisation" x="-245" y="-17">n16!</label>
+			<label kind="assignment" x="-245" y="0">TB2R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id40"/>
+			<target ref="id43"/>
+			<label kind="guard" x="-8" y="-110">TB2R &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-93">n14!</label>
+			<label kind="assignment" x="-8" y="-76">TB2R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id41"/>
+			<target ref="id40"/>
+			<label kind="guard" x="-178" y="-178">TB2R &gt;= 10</label>
+			<label kind="synchronisation" x="-245" y="-170">n12!</label>
+			<label kind="assignment" x="-245" y="-153">TB2R := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>C3S</name>
+		<declaration>clock TC3S;</declaration>
+		<location id="id44" x="-17" y="17">
+			<name x="-27" y="-17">C3SG</name>
+			<label kind="invariant" x="-17" y="34">TC3S &lt;= 10</label>
+		</location>
+		<location id="id45" x="-17" y="221">
+			<name x="-27" y="187">C3SG2</name>
+			<label kind="invariant" x="-25" y="238">TC3S &lt;= 3</label>
+		</location>
+		<location id="id46" x="-272" y="17">
+			<name x="-282" y="-17">C3SY</name>
+			<label kind="invariant" x="-282" y="34">TC3S &lt;= 3</label>
+		</location>
+		<location id="id47" x="-17" y="-153">
+			<name x="-27" y="-187">C3SRY</name>
+			<label kind="invariant" x="-93" y="-144">TC3S &lt;= 3</label>
+		</location>
+		<location id="id48" x="-272" y="-153">
+			<name x="-282" y="-187">C3SR</name>
+			<label kind="invariant" x="-282" y="-136">TC3S &lt;= 101</label>
+		</location>
+		<location id="id49" x="-272" y="221">
+			<name x="-282" y="187">C3SG3</name>
+			<label kind="invariant" x="-282" y="238">TC3S &lt;= 10</label>
+		</location>
+		<init ref="id48"/>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id49"/>
+			<label kind="guard" x="-119" y="229">TC3S &gt;= 3</label>
+			<label kind="synchronisation" x="-161" y="195">n28?</label>
+			<label kind="assignment" x="-195" y="229">TC3S := 0</label>
+			<nail x="-76" y="221"/>
+			<nail x="-127" y="221"/>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id45"/>
+			<label kind="guard" x="-8" y="85">TC3S &gt;= 10</label>
+			<label kind="synchronisation" x="-51" y="102">n25?</label>
+			<label kind="assignment" x="-8" y="127">TC3S := 0</label>
+			<nail x="-17" y="102"/>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id48"/>
+			<label kind="guard" x="-272" y="-102">TC3S &gt;= 3</label>
+			<label kind="synchronisation" x="-272" y="-85">n31?</label>
+			<label kind="assignment" x="-272" y="-68">TC3S := 0</label>
+			<nail x="-272" y="-25"/>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id46"/>
+			<label kind="guard" x="-263" y="93">TC3S &gt;= 10</label>
+			<label kind="synchronisation" x="-263" y="110">n29?</label>
+			<label kind="assignment" x="-340" y="110">TC3S := 0</label>
+			<nail x="-272" y="93"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id44"/>
+			<label kind="guard" x="-8" y="-127">TC3S &gt;= 3</label>
+			<label kind="synchronisation" x="0" y="-85">n21!</label>
+			<label kind="assignment" x="-8" y="-59">TC3S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id47"/>
+			<label kind="guard" x="-187" y="-153">TC3S &gt;= 10</label>
+			<label kind="synchronisation" x="-153" y="-170">n19!</label>
+			<label kind="assignment" x="-254" y="-153">TC3S := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>C3R</name>
+		<declaration>clock TC3R;</declaration>
+		<location id="id50" x="-255" y="8">
+			<name x="-265" y="-26">C3RY</name>
+			<label kind="invariant" x="-263" y="25">TC3R &lt;= 3</label>
+		</location>
+		<location id="id51" x="-8" y="-161">
+			<name x="-18" y="-195">C3RRY</name>
+			<label kind="invariant" x="-18" y="-144">TC3R &lt;= 3</label>
+		</location>
+		<location id="id52" x="-255" y="-161">
+			<name x="-265" y="-195">C3RR</name>
+			<label kind="invariant" x="-265" y="-144">TC3R &lt;= 114</label>
+		</location>
+		<location id="id53" x="-8" y="8">
+			<name x="-18" y="-26">C3RG</name>
+			<label kind="invariant" x="-18" y="25">TC3R &lt;= 10</label>
+		</location>
+		<init ref="id52"/>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id52"/>
+			<label kind="guard" x="-255" y="-110">TC3R &gt;= 3</label>
+			<label kind="synchronisation" x="-255" y="-93">n26?</label>
+			<label kind="assignment" x="-255" y="-76">TC3R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id50"/>
+			<label kind="guard" x="-144" y="-17">TC3R &gt;= 10</label>
+			<label kind="synchronisation" x="-237" y="-9">n23?</label>
+			<label kind="assignment" x="-237" y="8">TC3R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id53"/>
+			<label kind="guard" x="-8" y="-110">TC3R &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-93">n22?</label>
+			<label kind="assignment" x="-8" y="-76">TC3R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id51"/>
+			<label kind="guard" x="-170" y="-187">TC3R &gt;= 10</label>
+			<label kind="synchronisation" x="-237" y="-178">n20?</label>
+			<label kind="assignment" x="-237" y="-161">TC3R := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B3L</name>
+		<declaration>clock TB3L;</declaration>
+		<location id="id54" x="0" y="-161">
+			<name x="-10" y="-195">B3LRY</name>
+			<label kind="invariant" x="-10" y="-144">TB3L &lt;= 3</label>
+		</location>
+		<location id="id55" x="-263" y="-161">
+			<name x="-273" y="-195">B3LR</name>
+			<label kind="invariant" x="-273" y="-144">TB3L &lt;= 114</label>
+		</location>
+		<location id="id56" x="-263" y="0">
+			<name x="-273" y="-34">B3LY</name>
+			<label kind="invariant" x="-273" y="17">TB3L &lt;= 3</label>
+		</location>
+		<location id="id57" x="0" y="0">
+			<name x="-10" y="-34">B3LG</name>
+			<label kind="invariant" x="-10" y="17">TB3L &lt;= 10</label>
+		</location>
+		<init ref="id55"/>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id55"/>
+			<label kind="guard" x="-263" y="-114">TB3L &gt;= 3</label>
+			<label kind="synchronisation" x="-263" y="-97">n35?</label>
+			<label kind="assignment" x="-263" y="-80">TB3L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id56"/>
+			<label kind="guard" x="-170" y="-25">TB3L &gt;= 10</label>
+			<label kind="synchronisation" x="-246" y="-17">n33?</label>
+			<label kind="assignment" x="-245" y="0">TB3L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id57"/>
+			<label kind="guard" x="0" y="-114">TB3L &gt;= 3</label>
+			<label kind="synchronisation" x="0" y="-97">n31!</label>
+			<label kind="assignment" x="0" y="-80">TB3L := 0</label>
+			<nail x="0" y="-136"/>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id54"/>
+			<label kind="guard" x="-187" y="-187">TB3L &gt;= 10</label>
+			<label kind="synchronisation" x="-245" y="-178">n29!</label>
+			<label kind="assignment" x="-245" y="-161">TB3L := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B3S</name>
+		<declaration>clock TB3S;</declaration>
+		<location id="id58" x="0" y="-153">
+			<name x="-10" y="-187">B3SRY</name>
+			<label kind="invariant" x="-10" y="-136">TB3S &lt;= 3</label>
+		</location>
+		<location id="id59" x="-263" y="-153">
+			<name x="-273" y="-187">B3SR</name>
+			<label kind="invariant" x="-273" y="-136">TB3S &lt;= 101</label>
+		</location>
+		<location id="id60" x="-263" y="0">
+			<name x="-273" y="-34">B3SY</name>
+			<label kind="invariant" x="-273" y="17">TB3S &lt;= 3</label>
+		</location>
+		<location id="id61" x="0" y="0">
+			<name x="-10" y="-34">B3SG</name>
+			<label kind="invariant" x="-10" y="17">TB3S &lt;= 23</label>
+		</location>
+		<init ref="id59"/>
+		<transition>
+			<source ref="id60"/>
+			<target ref="id59"/>
+			<label kind="guard" x="-263" y="-110">TB3S &gt;= 3</label>
+			<label kind="synchronisation" x="-263" y="-93">n35!</label>
+			<label kind="assignment" x="-263" y="-76">TB3S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id60"/>
+			<label kind="guard" x="-161" y="-25">TB3S &gt;= 10</label>
+			<label kind="synchronisation" x="-245" y="-17">n33!</label>
+			<label kind="assignment" x="-245" y="0">TB3S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id61"/>
+			<label kind="guard" x="0" y="-110">TB3S &gt;= 3</label>
+			<label kind="synchronisation" x="0" y="-93">n26!</label>
+			<label kind="assignment" x="0" y="-76">TB3S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id58"/>
+			<label kind="guard" x="-187" y="-178">TB3S &gt;= 10</label>
+			<label kind="synchronisation" x="-246" y="-170">n23!</label>
+			<label kind="assignment" x="-245" y="-153">TB3S := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B3R</name>
+		<declaration>clock TB3R;</declaration>
+		<location id="id62" x="-8" y="-144">
+			<name x="-18" y="-178">B3RRY</name>
+			<label kind="invariant" x="-18" y="-127">TB3R &lt;= 3</label>
+		</location>
+		<location id="id63" x="-263" y="-144">
+			<name x="-273" y="-178">B3RR</name>
+			<label kind="invariant" x="-273" y="-127">TB3R &lt;= 114</label>
+		</location>
+		<location id="id64" x="-263" y="17">
+			<name x="-273" y="-17">B3RY</name>
+			<label kind="invariant" x="-273" y="34">TB3R &lt;= 3</label>
+		</location>
+		<location id="id65" x="-8" y="17">
+			<name x="-18" y="-17">B3RG</name>
+			<label kind="invariant" x="-18" y="34">TB3R &lt;= 10</label>
+		</location>
+		<init ref="id63"/>
+		<transition>
+			<source ref="id64"/>
+			<target ref="id63"/>
+			<label kind="guard" x="-263" y="-97">TB3R &gt;= 3</label>
+			<label kind="synchronisation" x="-263" y="-80">n27?</label>
+			<label kind="assignment" x="-263" y="-63">TB3R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id64"/>
+			<label kind="guard" x="-170" y="-8">TB3R &gt;= 10</label>
+			<label kind="synchronisation" x="-245" y="0">n24?</label>
+			<label kind="assignment" x="-245" y="17">TB3R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id65"/>
+			<label kind="guard" x="-8" y="-97">TB3R &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-80">n22!</label>
+			<label kind="assignment" x="-8" y="-63">TB3R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id62"/>
+			<label kind="guard" x="-187" y="-170">TB3R &gt;= 10</label>
+			<label kind="synchronisation" x="-245" y="-161">n20!</label>
+			<label kind="assignment" x="-245" y="-144">TB3R := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>C4S</name>
+		<declaration>clock TC4S;</declaration>
+		<location id="id66" x="-255" y="195">
+			<name x="-265" y="161">C4SG3</name>
+			<label kind="invariant" x="-265" y="212">TC4S &lt;= 23</label>
+		</location>
+		<location id="id67" x="-8" y="195">
+			<name x="-18" y="161">C4SG2</name>
+			<label kind="invariant" x="-18" y="212">TC4S &lt;= 3</label>
+		</location>
+		<location id="id68" x="-255" y="8">
+			<name x="-265" y="-26">C4SY</name>
+			<label kind="invariant" x="-265" y="25">TC4S &lt;= 3</label>
+		</location>
+		<location id="id69" x="-8" y="-161">
+			<name x="-18" y="-195">C4SRY</name>
+			<label kind="invariant" x="-18" y="-144">TC4S &lt;= 3</label>
+		</location>
+		<location id="id70" x="-255" y="-161">
+			<name x="-265" y="-195">C4SR</name>
+			<label kind="invariant" x="-265" y="-144">TC4S &lt;= 88</label>
+		</location>
+		<location id="id71" x="-8" y="8">
+			<name x="-18" y="-26">C4SG</name>
+			<label kind="invariant" x="-18" y="25">TC4S &lt;= 10</label>
+		</location>
+		<init ref="id70"/>
+		<transition>
+			<source ref="id67"/>
+			<target ref="id66"/>
+			<label kind="guard" x="-128" y="203">TC4S &gt;= 3</label>
+			<label kind="synchronisation" x="-128" y="220">n32?</label>
+			<label kind="assignment" x="-128" y="237">TC4S := 0</label>
+			<nail x="-102" y="195"/>
+		</transition>
+		<transition>
+			<source ref="id71"/>
+			<target ref="id67"/>
+			<label kind="guard" x="-85" y="68">TC4S &gt;= 10</label>
+			<label kind="synchronisation" x="-51" y="93">n30?</label>
+			<label kind="assignment" x="-85" y="119">TC4S := 0</label>
+			<nail x="-8" y="93"/>
+		</transition>
+		<transition>
+			<source ref="id68"/>
+			<target ref="id70"/>
+			<label kind="guard" x="-255" y="-110">TC4S &gt;= 3</label>
+			<label kind="synchronisation" x="-255" y="-93">n39?</label>
+			<label kind="assignment" x="-255" y="-76">TC4S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id66"/>
+			<target ref="id68"/>
+			<label kind="guard" x="-331" y="93">TC4S &gt;= 10</label>
+			<label kind="synchronisation" x="-289" y="59">n37?</label>
+			<label kind="assignment" x="-314" y="127">TC4S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id69"/>
+			<target ref="id71"/>
+			<label kind="guard" x="-8" y="-110">TC4S &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-93">n27!</label>
+			<label kind="assignment" x="-8" y="-76">TC4S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id69"/>
+			<label kind="guard" x="-187" y="-187">TC4S &gt;= 10</label>
+			<label kind="synchronisation" x="-237" y="-178">n24!</label>
+			<label kind="assignment" x="-237" y="-161">TC4S := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>C4R</name>
+		<declaration>clock TC4R;</declaration>
+		<location id="id72" x="-238" y="8">
+			<name x="-248" y="-26">C4RY</name>
+			<label kind="invariant" x="-248" y="25">TC4R &lt;= 3</label>
+		</location>
+		<location id="id73" x="-8" y="-161">
+			<name x="-18" y="-195">C4RRY</name>
+			<label kind="invariant" x="-18" y="-144">TC4R &lt;= 3</label>
+		</location>
+		<location id="id74" x="-238" y="-161">
+			<name x="-248" y="-195">C4RR</name>
+			<label kind="invariant" x="-248" y="-144">TC4R &lt;= 114</label>
+		</location>
+		<location id="id75" x="-8" y="8">
+			<name x="-18" y="-26">C4RG</name>
+			<label kind="invariant" x="-18" y="25">TC4R &lt;= 10</label>
+		</location>
+		<init ref="id74"/>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id74"/>
+			<label kind="guard" x="-238" y="-110">TC4R &gt;= 3</label>
+			<label kind="synchronisation" x="-238" y="-93">n39!</label>
+			<label kind="assignment" x="-238" y="-76">TC4R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id75"/>
+			<target ref="id72"/>
+			<label kind="guard" x="-153" y="-17">TC4R &gt;= 10</label>
+			<label kind="synchronisation" x="-220" y="-9">n37!</label>
+			<label kind="assignment" x="-220" y="8">TC4R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id73"/>
+			<target ref="id75"/>
+			<label kind="guard" x="-8" y="-110">TC4R &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-93">n36?</label>
+			<label kind="assignment" x="-8" y="-76">TC4R := 0</label>
+		</transition>
+		<transition>
+			<source ref="id74"/>
+			<target ref="id73"/>
+			<label kind="guard" x="-170" y="-187">TC4R &gt;= 10</label>
+			<label kind="synchronisation" x="-220" y="-178">n34?</label>
+			<label kind="assignment" x="-220" y="-161">TC4R := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B4L</name>
+		<declaration>clock TB4L;</declaration>
+		<location id="id76" x="8" y="-144">
+			<name x="-2" y="-178">B4LRY</name>
+			<label kind="invariant" x="-2" y="-127">TB4L &lt;=  3</label>
+		</location>
+		<location id="id77" x="-238" y="-144">
+			<name x="-248" y="-178">B4LR</name>
+			<label kind="invariant" x="-248" y="-127">TB4L &lt;= 114</label>
+		</location>
+		<location id="id78" x="-238" y="17">
+			<name x="-248" y="-17">B4LY</name>
+			<label kind="invariant" x="-248" y="34">TB4L &lt;=  3</label>
+		</location>
+		<location id="id79" x="8" y="17">
+			<name x="-2" y="-17">B4LG</name>
+			<label kind="invariant" x="-2" y="34">TB4L &lt;=  10</label>
+		</location>
+		<init ref="id77"/>
+		<transition>
+			<source ref="id78"/>
+			<target ref="id77"/>
+			<label kind="guard" x="-238" y="-97">TB4L &gt;= 3</label>
+			<label kind="synchronisation" x="-238" y="-80">n44!</label>
+			<label kind="assignment" x="-238" y="-63">TB4L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id79"/>
+			<target ref="id78"/>
+			<label kind="guard" x="-144" y="-8">TB4L &gt;= 10</label>
+			<label kind="synchronisation" x="-220" y="0">n42!</label>
+			<label kind="assignment" x="-220" y="17">TB4L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id76"/>
+			<target ref="id79"/>
+			<label kind="guard" x="8" y="-97">TB4L &gt;= 3</label>
+			<label kind="synchronisation" x="8" y="-80">n40?</label>
+			<label kind="assignment" x="8" y="-63">TB4L := 0</label>
+		</transition>
+		<transition>
+			<source ref="id77"/>
+			<target ref="id76"/>
+			<label kind="guard" x="-153" y="-170">TB4L &gt;= 10</label>
+			<label kind="synchronisation" x="-220" y="-161">n38?</label>
+			<label kind="assignment" x="-220" y="-144">TB4L := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B4S</name>
+		<declaration>clock TB4S;</declaration>
+		<location id="id80" x="-8" y="-161">
+			<name x="-18" y="-195">B4SRY</name>
+			<label kind="invariant" x="-18" y="-144">TB4S &lt;= 3</label>
+		</location>
+		<location id="id81" x="-246" y="-161">
+			<name x="-256" y="-195">B4SR</name>
+			<label kind="invariant" x="-256" y="-144">TB4S &lt;= 114</label>
+		</location>
+		<location id="id82" x="-246" y="0">
+			<name x="-306" y="0">B4SY</name>
+			<label kind="invariant" x="-256" y="17">TB4S &lt;= 3</label>
+		</location>
+		<location id="id83" x="-8" y="0">
+			<name x="-18" y="-34">B4SG</name>
+			<label kind="invariant" x="-18" y="17">TB4S &lt;= 10</label>
+		</location>
+		<init ref="id81"/>
+		<transition>
+			<source ref="id82"/>
+			<target ref="id81"/>
+			<label kind="guard" x="-246" y="-114">TB4S &gt;= 3</label>
+			<label kind="synchronisation" x="-246" y="-97">n32!</label>
+			<label kind="assignment" x="-246" y="-80">TB4S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id83"/>
+			<target ref="id82"/>
+			<label kind="guard" x="-119" y="-25">TB4S &gt;= 10</label>
+			<label kind="synchronisation" x="-153" y="-25">n30!</label>
+			<label kind="assignment" x="-221" y="-25">TB4S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id83"/>
+			<label kind="guard" x="-85" y="-102">TB4S &gt;= 3</label>
+			<label kind="synchronisation" x="-8" y="-97">n28!</label>
+			<label kind="assignment" x="-76" y="-76">TB4S := 0</label>
+		</transition>
+		<transition>
+			<source ref="id81"/>
+			<target ref="id80"/>
+			<label kind="guard" x="-144" y="-153">TB4S &gt;= 10</label>
+			<label kind="synchronisation" x="-144" y="-178">n25!</label>
+			<label kind="assignment" x="-228" y="-161">TB4S := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>B4R</name>
+		<declaration>clock TB4R;</declaration>
+		<location id="id84" x="8" y="-144">
+			<name x="-2" y="-178">B4RRY</name>
+			<label kind="invariant" x="-2" y="-127">TB4R &lt;= 3</label>
+		</location>
+		<location id="id85" x="-229" y="-144">
+			<name x="-239" y="-178">B4RR</name>
+			<label kind="invariant" x="-239" y="-127">TB4R &lt;= 114</label>
+		</location>
+		<location id="id86" x="-229" y="0">
+			<name x="-239" y="-34">B4RY</name>
+			<label kind="invariant" x="-239" y="17">TB4R &lt;= 3</label>
+		</location>
+		<location id="id87" x="8" y="0">
+			<name x="25" y="-8">B4RG</name>
+			<label kind="invariant" x="-2" y="17">TB4R &lt;= 10</label>
+		</location>
+		<init ref="id85"/>
+		<transition>
+			<source ref="id86"/>
+			<target ref="id85"/>
+			<label kind="guard" x="-306" y="-93">TB4R &gt;= 3</label>
+			<label kind="synchronisation" x="-229" y="-89">n40!</label>
+			<label kind="assignment" x="-229" y="-72">TB4R := 0</label>
+			<nail x="-229" y="-17"/>
+		</transition>
+		<transition>
+			<source ref="id87"/>
+			<target ref="id86"/>
+			<label kind="guard" x="-144" y="-25">TB4R &gt;= 10</label>
+			<label kind="synchronisation" x="-211" y="-17">n38!</label>
+			<label kind="assignment" x="-211" y="0">TB4R := 0</label>
+			<nail x="-17" y="0"/>
+		</transition>
+		<transition>
+			<source ref="id84"/>
+			<target ref="id87"/>
+			<label kind="guard" x="8" y="-106">TB4R &gt;= 3</label>
+			<label kind="synchronisation" x="8" y="-89">n36!</label>
+			<label kind="assignment" x="8" y="-72">TB4R := 0</label>
+			<nail x="8" y="-127"/>
+		</transition>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id84"/>
+			<label kind="guard" x="-153" y="-170">TB4R &gt;= 10</label>
+			<label kind="synchronisation" x="-211" y="-161">n34!</label>
+			<label kind="assignment" x="-211" y="-144">TB4R := 0</label>
+			<nail x="-212" y="-144"/>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+PC1S = C1S();
+PC1R = C1R();
+PC2S = C2S();
+PC2R = C2R();
+PC3S = C3S();
+PC3R = C3R();
+PC4S = C4S();
+PC4R = C4R();
+
+PB1L = B1L();
+PB1S = B1S();
+PB1R = B1R();
+
+PB2L = B2L();
+PB2S = B2S();
+PB2R = B2R();
+
+PB3L = B3L();
+PB3S = B3S();
+PB3R = B3R();
+
+PB4L = B4L();
+PB4S = B4S();
+PB4R = B4R();
+
+system PC1S, PC1R, PC2S, PC2R, PC3S, PC3R, PC4S, PC4R,
+PB1L, PB1S, PB1R,
+PB2L, PB2S, PB2R,
+PB3L, PB3S, PB3R,
+PB4L, PB4S, PB4R;
+    </system>
+	<queries>
+		<query>
+			<formula>A&lt;&gt; not ( PB4R.B4RG &amp;&amp; (PB4R.TB4R&lt;10))
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB3R.B3RG &amp;&amp; PB3R.TB3R&lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB2R.B2RG &amp;&amp; PB2R.TB2R&lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB1R.B1RG &amp;&amp; PB1R.TB1R&lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB4L.B4LG &amp;&amp; PB4L.TB4L&lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB3L.B3LG &amp;&amp; PB3L.TB3L&lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB2L.B2LG &amp;&amp; PB2L.TB2L&lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB1L.B1LG &amp;&amp; PB1L.TB1L&lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB4S.B4SG &amp;&amp; PB4S.TB4S &lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB3S.B3SG &amp;&amp; PB3S.TB3S &lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB2S.B2SG &amp;&amp; PB2S.TB2S &lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PB1S.B1SG &amp;&amp; PB1S.TB1S&lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PC4S.C4SG &amp;&amp; PC4S.TC4S &lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PC3S.C3SG &amp;&amp; PC3S.TC3S &lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PC2S.C2SG &amp;&amp; PC2S.TC2S &lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; not ( PC1S.C1SG &amp;&amp; PC1S.TC1S &lt;10)
+			</formula>
+			<comment>lampu hijau tidak menyala kurang dari 10 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4R.B4RR &amp;&amp; PB4R.TB4R  &gt;=88 &amp;&amp; PB4R.TB4R &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3R.B3RR &amp;&amp; PB3R.TB3R  &gt;=88 &amp;&amp; PB3R.TB3R &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2R.B2RR &amp;&amp; PB2R.TB2R  &gt;=88 &amp;&amp; PB2R.TB2R &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1R.B1RR &amp;&amp; PB1R.TB1R  &gt;=88 &amp;&amp; PB1R.TB1R &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4S.B4SR &amp;&amp; PB4S.TB4S  &gt;=88 &amp;&amp; PB4S.TB4S &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3S.B3SR &amp;&amp; PB3S.TB3S  &gt;=88 &amp;&amp; PB3S.TB3S &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2S.B2SR &amp;&amp; PB2S.TB2S  &gt;=88 &amp;&amp; PB2S.TB2S &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1S.B1SR &amp;&amp; PB1S.TB1S  &gt;=88 &amp;&amp; PB1S.TB1S &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4L.B4LR &amp;&amp; PB4L.TB4L  &gt;=88 &amp;&amp; PB4L.TB4L &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3L.B3LR &amp;&amp; PB3L.TB3L  &gt;=88 &amp;&amp; PB3L.TB3L &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2L.B2LR &amp;&amp; PB2L.TB2L  &gt;=88 &amp;&amp; PB2L.TB2L &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1L.B1LR &amp;&amp; PB1L.TB1L  &gt;=88 &amp;&amp; PB1L.TB1L &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4R.C4RR &amp;&amp; PC4R.TC4R  &gt;=88 &amp;&amp; PC4R.TC4R &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4S.C4SR &amp;&amp; PC4S.TC4S  &gt;=88 &amp;&amp; PC4S.TC4S &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3R.C3RR &amp;&amp; PC3R.TC3R  &gt;=88 &amp;&amp; PC3R.TC3R &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3S.C3SR &amp;&amp; PC3S.TC3S  &gt;=88 &amp;&amp; PC3S.TC3S &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2R.C2RR &amp;&amp; PC2R.TC2R  &gt;=88 &amp;&amp; PC2R.TC2R &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2S.C2SR &amp;&amp; PC2S.TC2S  &gt;=88 &amp;&amp; PC2S.TC2S &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1R.C1RR &amp;&amp; PC1R.TC1R  &gt;=88 &amp;&amp; PC1R.TC1R &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1S.C1SR &amp;&amp; PC1S.TC1S  &gt;=88 &amp;&amp; PC1S.TC1S &lt;=114)
+			</formula>
+			<comment>lampu merah range 88-114 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4R.B4RRY &amp;&amp; PB4R.TB4R  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3R.B3RRY &amp;&amp; PB3R.TB3R  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2R.B2RRY &amp;&amp; PB2R.TB2R  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1R.B1RRY &amp;&amp; PB1R.TB1R  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4S.B4SRY &amp;&amp; PB4S.TB4S  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3S.B3SRY &amp;&amp; PB3S.TB3S  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2S.B2SRY &amp;&amp; PB2S.TB2S  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1S.B1SRY &amp;&amp; PB1S.TB1S  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4L.B4LRY &amp;&amp; PB4L.TB4L  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3L.B3LRY &amp;&amp; PB3L.TB3L  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2L.B2LRY &amp;&amp; PB2L.TB2L  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1L.B1LRY &amp;&amp; PB1L.TB1L  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4R.C4RRY &amp;&amp; PC4R.TC4R  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4S.C4SRY &amp;&amp; PC4S.TC4S  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3R.C3RRY &amp;&amp; PC3R.TC3R  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3S.C3SRY &amp;&amp; PC3S.TC3S  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2R.C2RRY &amp;&amp; PC2R.TC2R  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2S.C2SRY &amp;&amp; PC2S.TC2S  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1R.C1RRY &amp;&amp; PC1R.TC1R  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1S.C1SRY &amp;&amp; PC1S.TC1S  ==3)
+			</formula>
+			<comment>Lampu merah-kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4R.B4RY &amp;&amp; PB4R.TB4R  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3R.B3RY &amp;&amp; PB3R.TB3R  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2R.B2RY &amp;&amp; PB2R.TB2R  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1R.B1RY &amp;&amp; PB1R.TB1R  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4S.B4SY &amp;&amp; PB4S.TB4S  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3S.B3SY &amp;&amp; PB3S.TB3S  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2S.B2SY &amp;&amp; PB2S.TB2S  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1S.B1SY &amp;&amp; PB1S.TB1S  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4L.B4LY &amp;&amp; PB4L.TB4L  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3L.B3LY &amp;&amp; PB3L.TB3L  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2L.B2LY &amp;&amp; PB2L.TB2L  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1L.B1LY &amp;&amp; PB1L.TB1L  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4R.C4RY &amp;&amp; PC4R.TC4R  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4S.C4SY &amp;&amp; PC4S.TC4S  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3R.C3RY &amp;&amp; PC3R.TC3R  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3S.C3SY &amp;&amp; PC3S.TC3S  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2R.C2RY &amp;&amp; PC2R.TC2R  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2S.C2SY &amp;&amp; PC2S.TC2S  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1R.C1RY &amp;&amp; PC1R.TC1R  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1S.C1SY &amp;&amp; PC1S.TC1S  ==3)
+			</formula>
+			<comment>Lampu kuning= 3 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4R.B4RG &amp;&amp; PB4R.TB4R  &gt;=10 &amp;&amp; PB4R.TB4R &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3R.B3RG &amp;&amp; PB3R.TB3R  &gt;=10 &amp;&amp; PB3R.TB3R &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2R.B2RG &amp;&amp; PB2R.TB2R  &gt;=10 &amp;&amp; PB2R.TB2R &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1R.B1RG &amp;&amp; PB1R.TB1R  &gt;=10 &amp;&amp; PB1R.TB1R &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4S.B4SG &amp;&amp; PB4S.TB4S  &gt;=10 &amp;&amp; PB4S.TB4S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3S.B3SG &amp;&amp; PB3S.TB3S  &gt;=10 &amp;&amp; PB3S.TB3S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2S.B2SG &amp;&amp; PB2S.TB2S  &gt;=10 &amp;&amp; PB2S.TB2S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1S.B1SG &amp;&amp; PB1S.TB1S  &gt;=10 &amp;&amp; PB1S.TB1S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB4L.B4LG &amp;&amp; PB4L.TB4L  &gt;=10 &amp;&amp; PB4L.TB4L &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB3L.B3LG &amp;&amp; PB3L.TB3L  &gt;=10 &amp;&amp; PB3L.TB3L &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB2L.B2LG &amp;&amp; PB2L.TB2L  &gt;=10 &amp;&amp; PB2L.TB2L &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PB1L.B1LG &amp;&amp; PB1L.TB1L  &gt;=10 &amp;&amp; PB1L.TB1L &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4R.C4RG &amp;&amp; PC4R.TC4R  &gt;=10 &amp;&amp; PC4R.TC4R &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4S.C4SG3 &amp;&amp; PC4S.TC4S  &gt;=10 &amp;&amp; PC4S.TC4S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4S.C4SG2 &amp;&amp; PC4S.TC4S  ==3)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4S.C4SG &amp;&amp; PC4S.TC4S  &gt;=10 &amp;&amp; PC4S.TC4S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4S.C4SG3 &amp;&amp; PC4S.TC4S  ==10)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4S.C4SG2 &amp;&amp; PC4S.TC4S  ==3)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC4S.C4SG &amp;&amp; PC4S.TC4S  ==10)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3R.C3RG &amp;&amp; PC3R.TC3R  &gt;=10 &amp;&amp; PC3R.TC3R &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3S.C3SG3 &amp;&amp; PC3S.TC3S  &gt;=10 &amp;&amp; PC3S.TC3S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3S.C3SG2 &amp;&amp; PC3S.TC3S  &gt;=3 &amp;&amp; PC3S.TC3S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3S.C3SG &amp;&amp; PC3S.TC3S  &gt;=10 &amp;&amp; PC3S.TC3S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3S.C3SG3 &amp;&amp; PC3S.TC3S  ==10)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3S.C3SG2 &amp;&amp; PC3S.TC3S  ==3)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC3S.C3SG &amp;&amp; PC3S.TC3S  ==10)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2R.C2RG &amp;&amp; PC2R.TC2R  &gt;=10 &amp;&amp; PC2R.TC2R &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2S.C2SG3 &amp;&amp; PC2S.TC2S  &gt;=10 &amp;&amp; PC2S.TC2S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2S.C2SG2 &amp;&amp; PC2S.TC2S  &gt;=3 &amp;&amp; PC2S.TC2S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2S.C2SG &amp;&amp; PC2S.TC2S  &gt;=10 &amp;&amp; PC2S.TC2S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2S.C2SG3 &amp;&amp; PC2S.TC2S  ==10)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2S.C2SG2 &amp;&amp; PC2S.TC2S  ==3)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC2S.C2SG &amp;&amp; PC2S.TC2S  ==10)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1R.C1RG &amp;&amp; PC1R.TC1R  &gt;=10 &amp;&amp; PC1R.TC1R &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1S.C1SG3 &amp;&amp; PC1S.TC1S  &gt;=10 &amp;&amp; PC1S.TC1S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1S.C1SG2 &amp;&amp; PC1S.TC1S  &gt;=3 &amp;&amp; PC1S.TC1S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1S.C1SG &amp;&amp; PC1S.TC1S  &gt;=10 &amp;&amp; PC1S.TC1S &lt;=36)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1S.C1SG3 &amp;&amp; PC1S.TC1S  ==10)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1S.C1SG2 &amp;&amp; PC1S.TC1S  ==3)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; ( PC1S.C1SG &amp;&amp; PC1S.TC1S  ==10)
+			</formula>
+			<comment>Lampu hijau menyala pada range 10-36 detik
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB4L.B4LG) &amp;&amp; not (PB4L.B4LR) &amp;&amp; not (PB4L.B4LY) &amp;&amp; not (PB4L.B4LRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB3L.B3LG) &amp;&amp; not (PB3L.B3LR) &amp;&amp; not (PB3L.B3LY) &amp;&amp; not (PB3L.B3LRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB2L.B2LG) &amp;&amp; not (PB2L.B2LR) &amp;&amp; not (PB2L.B2LY) &amp;&amp; not (PB2L.B2LRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB1L.B1LG) &amp;&amp; not (PB1L.B1LR) &amp;&amp; not (PB1L.B1LY) &amp;&amp; not (PB1L.B1LRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB4R.B4RG) &amp;&amp; not (PB4R.B4RR) &amp;&amp; not (PB4R.B4RY) &amp;&amp; not (PB4R.B4RRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB3R.B3RG) &amp;&amp; not (PB3R.B3RR) &amp;&amp; not (PB3R.B3RY) &amp;&amp; not (PB3R.B3RRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB2R.B2RG) &amp;&amp; not (PB2R.B2RR) &amp;&amp; not (PB2R.B2RY) &amp;&amp; not (PB2R.B2RRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB1R.B1RG) &amp;&amp; not (PB1R.B1RR) &amp;&amp; not (PB1R.B1RY) &amp;&amp; not (PB1R.B1RRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB4S.B4SG) &amp;&amp; not (PB4S.B4SR) &amp;&amp; not (PB4S.B4SY) &amp;&amp; not (PB4S.B4SRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB3S.B3SG) &amp;&amp; not (PB3S.B3SR) &amp;&amp; not (PB3S.B3SY) &amp;&amp; not (PB3S.B3SRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB2S.B2SG) &amp;&amp; not (PB2S.B2SR) &amp;&amp; not (PB2S.B2SY) &amp;&amp; not (PB2S.B2SRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PB1S.B1SG) &amp;&amp; not (PB1S.B1SR) &amp;&amp; not (PB1S.B1SY) &amp;&amp; not (PB1S.B1SRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC4R.C4RG) &amp;&amp; not (PC4R.C4RR) &amp;&amp; not (PC4R.C4RY) &amp;&amp; not (PC4R.C4RRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC4S.C4SG) &amp;&amp; not (PC4S.C4SR) &amp;&amp; not (PC4S.C4SY) &amp;&amp; not (PC4S.C4SRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC3R.C3RG)  &amp;&amp; not (PC3R.C3RR) &amp;&amp; not (PC3R.C3RY) &amp;&amp; not (PC3R.C3RRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC3S.C3SG)  &amp;&amp; not (PC3S.C3SR) &amp;&amp; not (PC3S.C3SY) &amp;&amp; not (PC3S.C3SRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC2R.C2RG)  &amp;&amp; not (PC2R.C2RR) &amp;&amp; not (PC2R.C2RY) &amp;&amp; not (PC2R.C2RRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC2S.C2SG3)  &amp;&amp; not (PC2S.C2SR) &amp;&amp; not (PC2S.C2SY) &amp;&amp; not (PC2S.C2SRY)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC2S.C2SG2)  &amp;&amp; not (PC2S.C2SR) &amp;&amp; not (PC2S.C2SY) &amp;&amp; not (PC2S.C2SRY)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC2S.C2SG)  &amp;&amp; not (PC2S.C2SR) &amp;&amp; not (PC2S.C2SY) &amp;&amp; not (PC2S.C2SRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt;  (PC1R.C1RG)  &amp;&amp; not (PC1R.C1RR) &amp;&amp; not (PC1R.C1RY) &amp;&amp; not (PC1R.C1RRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC1S.C1SG3) &amp;&amp; not (PC1S.C1SR) &amp;&amp; not (PC1S.C1SY) &amp;&amp; not (PC1S.C1SRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC1S.C1SG2) &amp;&amp; not (PC1S.C1SR) &amp;&amp; not (PC1S.C1SY) &amp;&amp; not (PC1S.C1SRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; (PC1S.C1SG) &amp;&amp; not (PC1S.C1SR) &amp;&amp; not (PC1S.C1SY) &amp;&amp; not (PC1S.C1SRY)
+			</formula>
+			<comment>L1: for every traffic signal, the light turns green infinitely often (also considered as a unconditional fairness constraint).
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( ( not PB1R.B1RG | (not PC2S.C2SG &amp;&amp; not PC2R.C2RG)) &amp;&amp; 
+
+( not PB3R.B3RG | (not PC4S.C4SG &amp;&amp; not PC4R.C4RG)) &amp;&amp; 
+
+( not PB2R.B2RG | (not PC1S.C1SG &amp;&amp; not PC1R.C1RG)) &amp;&amp;
+
+( not PB4R.B4RG | (not PC3S.C3SG &amp;&amp; not PC3R.C3RG)) )
+			</formula>
+			<comment>S7.5 (conditions when Bir turns green): (i) green lights of Bir and Cjs and (ii) green lights of Bir and Cjr
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( (not PB1S.B1SG | (not PC2R.C2RG &amp;&amp; not PB2L.B2LG)) &amp;&amp; 
+
+(not PB3S.B3SG | (not PC4R.C4RG &amp;&amp; not PB4L.B4LG)) &amp;&amp; 
+
+(not PB2S.B2SG | (not PC1R.C1RG &amp;&amp; not PB1L.B1LG)) &amp;&amp;
+
+(not PB4S.B4SG | (not PC3R.C3RG &amp;&amp; not PB3L.B3LG)) )
+			</formula>
+			<comment>S7.4 (conditions when Bis turns green): (i) green lights of Bis and Cjr and (ii) green lights of Bis and Bjl
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt;  ( (not PB1L.B1LG | (not PC2R.C2RG &amp;&amp; not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp;
+
+(not PB3L.B3LG | (not PC4R.C4RG &amp;&amp; not PB4S.B4SG &amp;&amp; not PB4L.B4LG)) &amp;&amp;
+
+(not PB2L.B2LG | (not PC1R.C1RG &amp;&amp; not PB1S.B1SG &amp;&amp; not PB1L.B1LG)) &amp;&amp; 
+
+(not PB4L.B4LG | (not PC3R.C3RG &amp;&amp; not PB3S.B3SG &amp;&amp; not PB3L.B3LG))  )
+			</formula>
+			<comment>S7.3 (conditions when Bil turns green): (i) green lights of Bil and Cjr, (ii) green lights of Bil and Bjs, and (iii) green lights of Bil and Bjl
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( (not PC1R.C1RG | (not PC2R.C2RG &amp;&amp; not PC2S.C2SG &amp;&amp; not PB2R.B2RG &amp;&amp; not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp;
+
+(not PC3R.C3RG | (not PC4R.C4RG &amp;&amp; not PC4S.C4SG &amp;&amp; not PB4R.B4RG &amp;&amp; not PB4S.B4SG &amp;&amp; not PB4L.B4LG)) &amp;&amp;
+
+(not PC2R.C2RG | (not PC1R.C1RG &amp;&amp; not PC1S.C1SG &amp;&amp; not PB1R.B1RG &amp;&amp; not PB1S.B1SG &amp;&amp; not PB1L.B1LG)) &amp;&amp; 
+
+(not PC4R.C4RG | (not PC3R.C3RG &amp;&amp; not PC3S.C3SG &amp;&amp; not PB3R.B3RG &amp;&amp; not PB3S.B3SG &amp;&amp; not PB3L.B3LG)) )
+			</formula>
+			<comment>S7.2 (conditions when Cir turns green): (i) green lights of Cir and Cjr, (ii) green lights of Cir and Cjs, 
+(iii) green lights of Cir and Bjr, (iv) green lights of Cir and Bjs, and (v) green lights of Cir and Bjl
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( (not PC1S.C1SG | (not PC2R.C2RG &amp;&amp; not PB2R.B2RG)) &amp;&amp; 
+
+(not PC3S.C3SG | (not PC4R.C4RG &amp;&amp; not PB4R.B4RG)) &amp;&amp;
+
+(not PC2S.C2SG | (not PC1R.C1RG &amp;&amp; not PB1R.B1RG)) &amp;&amp; 
+
+(not PC4S.C4SG | (not PC3R.C3RG &amp;&amp; not PB3R.B3RG)))
+			</formula>
+			<comment>S7.1 (conditions when Cis turns green): (i) green lights of Cis and Cjr and (ii) green lights of Cis and Bjr
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not (PB1R.B1RG &amp;&amp; PC3R.C3RG) &amp;&amp; not (PB3R.B3RG &amp;&amp; PC2R.C2RG) &amp;&amp; not (PB2R.B2RG &amp;&amp; PC4R.C4RG) &amp;&amp; not (PB4R.B4RG &amp;&amp; PC1R.C1RG) )
+			</formula>
+			<comment>S6.5 (conditions when Bir turns green): green lights of Bir and Cjr must not occur concurrently.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( (not PB1S.B1SG | (not PC3S.C3SG &amp;&amp; not PC3R.C3RG &amp;&amp; not PB3S.B3SG)) &amp;&amp;
+
+(not PB3S.B3SG | (not PC2S.C2SG &amp;&amp; not PC2R.C2RG &amp;&amp; not PB2S.B2SG)) &amp;&amp; 
+
+(not PB2S.B2SG | (not PC4S.C4SG &amp;&amp; not PC4R.C4RG &amp;&amp; not PB4S.B4SG)) &amp;&amp;
+
+(not PB4S.B4SG | (not PC1S.C1SG &amp;&amp; not PC1R.C1RG &amp;&amp; not PB1S.B1SG)))
+			</formula>
+			<comment>--S6.4 (conditions when Bis turns green): (i) green lights of Bis and Cjs, (ii) green lights of Bis and Cjr, and (iii) green lights of Bis and Bjs
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( (not PB1L.B1LG |(not PB3S.B3SG &amp;&amp; not PB3L.B3LG)) &amp;&amp; 
+
+(not PB3L.B3LG | (not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp;
+
+(not PB2L.B2LG | (not PB4S.B4SG &amp;&amp; not PB4L.B4LG)) &amp;&amp;
+
+(not PB4L.B4LG | (not PB1S.B1SG &amp;&amp; not PB1L.B1LG)) )
+			</formula>
+			<comment>S6.3 (conditions when Bil turns green): (i) green lights of Bil and Bjs and (ii) green lights of Bil and Bjl.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( (not PC1R.C1RG | (not PC3R.C3RG &amp;&amp; not PB3R.B3RG &amp;&amp; not PB3S.B3SG &amp;&amp; not PB3L.B3LG)) &amp;&amp; 
+
+(not PC3R.C3RG | (not PC2R.C2RG &amp;&amp; not PB2R.B2RG &amp;&amp; not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp; 
+
+(not PC2R.C2RG | (not PC4R.C4RG &amp;&amp; not PB4R.B4RG &amp;&amp; not PB4S.B4SG &amp;&amp; not PB4L.B4LG)) &amp;&amp;
+
+(not PC4R.C4RG | (not PC1R.C1RG &amp;&amp; not PB1R.B1RG &amp;&amp; not PB1S.B1SG &amp;&amp; not PB1L.B1LG)) )
+			</formula>
+			<comment>-- S6.2 (conditions when Cir turns green): 
+
+-- (i) green lights of Cir and Cjr, (ii) green lights of Cir and Bjr, (iii) green lights of Cir and Bjs, and (iv) green lights of Cir and Bjl
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( (not PC1S.C1SG | (not PC3S.C3SG &amp;&amp; not PC3R.C3RG &amp;&amp; not PB3R.B3RG &amp;&amp; not PB3S.B3SG &amp;&amp; not PB3L.B3LG)) &amp;&amp;
+
+(not PC3S.C3SG | (not PC2S.C2SG &amp;&amp; not PC2R.C2RG &amp;&amp; not PB2R.B2RG &amp;&amp; not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp; 
+
+(not PC2S.C2SG | (not PC4S.C4SG &amp;&amp; not PC4R.C4RG &amp;&amp; not PB4R.B4RG &amp;&amp; not PB4S.B4SG &amp;&amp; not PB4L.B4LG)) &amp;&amp;  
+
+(not PC4S.C4SG | (not PC1S.C1SG &amp;&amp; not PC1R.C1RG &amp;&amp; not PB1R.B1RG &amp;&amp; not PB1S.B1SG &amp;&amp; not PB1L.B1LG)) )
+			</formula>
+			<comment>S6.1 (conditions when Cis turns green): 
+
+-- (i) green lights of Cis and Cjs, (ii) green lights of Cis and Cjr, (iii) green lights of Cis and Bjr, 
+-- (iv) green lights of Cis and Bjs, and (v) green lights of Cis and Bjl
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; (not (PC1S.C1SG &amp;&amp; PB1L.B1LG) &amp;&amp; not (PC1R.C1RG &amp;&amp; PB1L.B1LG) &amp;&amp; not (PC1R.C1RG &amp;&amp; PB1S.B1SG) &amp;&amp;  
+ not (PC2S.C2SG &amp;&amp; PB2L.B2LG) &amp;&amp; not(PC2R.C2RG &amp;&amp; PB2L.B2LG) &amp;&amp; not(PC2R.C2RG &amp;&amp; PB2S.B2SG) &amp;&amp; 
+not (PC3S.C3SG &amp;&amp; PB3L.B3LG) &amp;&amp; not(PC3R.C3RG &amp;&amp; PB3L.B3LG) &amp;&amp; not(PC3R.C3RG &amp;&amp; PB3S.B3SG) &amp;&amp;
+not(PC4S.C4SG &amp;&amp; PB4L.B4LG) &amp;&amp; not(PC4R.C4RG &amp;&amp; PB4L.B4LG) &amp;&amp; not(PC4R.C4RG &amp;&amp; PB4S.B4SG) )
+			</formula>
+			<comment>-- S5: each pair of the following green lights must not occur concurrently: 
+-- (i) green lights of Cis and Bil, (ii) green lights of Cir and Bil, and (iii) green lights of Cir and Bis
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB4R.B4RR &amp;&amp; PB4R.B4RG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB3R.B3RR &amp;&amp; PB3R.B3RG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB2R.B2RR &amp;&amp; PB2R.B2RG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB1R.B1RR &amp;&amp; PB1R.B1RG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB4S.B4SR &amp;&amp; PB4S.B4SG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB3S.B3SR &amp;&amp; PB3S.B3SG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB2S.B2SR &amp;&amp; PB2S.B2SG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB1S.B1SR &amp;&amp; PB1S.B1SG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB1S.B1SR &amp;&amp; PB1S.B1SG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB4L.B4LR &amp;&amp; PB4L.B4LG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB3L.B3LR &amp;&amp; PB3L.B3LG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB2L.B2LR &amp;&amp; PB2L.B2LG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PB1L.B1LR &amp;&amp; PB1L.B1LG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PC4R.C4RR &amp;&amp; PC4R.C4RG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PC3R.C3RR &amp;&amp; PC3R.C3RG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PC2R.C2RR &amp;&amp; PC2R.C2RG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PC1R.C1RR &amp;&amp; PC1R.C1RG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PC4S.C4SR &amp;&amp; PC4S.C4SG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PC3S.C3SR &amp;&amp; PC3S.C3SG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PC2S.C2SR &amp;&amp; PC2S.C2SG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+		<query>
+			<formula>A&lt;&gt; ( not ( PC1S.C1SR &amp;&amp; PC1S.C1SG ))
+			</formula>
+			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
+			</comment>
+		</query>
+	</queries>
+</nta>
