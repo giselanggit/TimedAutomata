@@ -1968,7 +1968,7 @@ PB4L, PB4S, PB4R;
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( ( not PB1R.B1RG | (not PC2S.C2SG &amp;&amp; not PC2R.C2RG)) &amp;&amp; 
+			<formula>E[] ( ( not PB1R.B1RG | (not PC2S.C2SG &amp;&amp; not PC2R.C2RG)) &amp;&amp; 
 
 ( not PB3R.B3RG | (not PC4S.C4SG &amp;&amp; not PC4R.C4RG)) &amp;&amp; 
 
@@ -1980,7 +1980,7 @@ PB4L, PB4S, PB4R;
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( (not PB1S.B1SG | (not PC2R.C2RG &amp;&amp; not PB2L.B2LG)) &amp;&amp; 
+			<formula>E[] ( (not PB1S.B1SG | (not PC2R.C2RG &amp;&amp; not PB2L.B2LG)) &amp;&amp; 
 
 (not PB3S.B3SG | (not PC4R.C4RG &amp;&amp; not PB4L.B4LG)) &amp;&amp; 
 
@@ -1992,9 +1992,7 @@ PB4L, PB4S, PB4R;
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt;  ( (not PB1L.B1LG | (not PC2R.C2RG &amp;&amp; not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp;
-
-(not PB3L.B3LG | (not PC4R.C4RG &amp;&amp; not PB4S.B4SG &amp;&amp; not PB4L.B4LG)) &amp;&amp;
+			<formula>E[]((not PB3L.B3LG | (not PC4R.C4RG &amp;&amp; not PB4S.B4SG &amp;&amp; not PB4L.B4LG)) &amp;&amp;
 
 (not PB2L.B2LG | (not PC1R.C1RG &amp;&amp; not PB1S.B1SG &amp;&amp; not PB1L.B1LG)) &amp;&amp; 
 
@@ -2004,7 +2002,7 @@ PB4L, PB4S, PB4R;
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( (not PC1R.C1RG | (not PC2R.C2RG &amp;&amp; not PC2S.C2SG &amp;&amp; not PB2R.B2RG &amp;&amp; not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp;
+			<formula>E[] ( (not PC1R.C1RG | (not PC2R.C2RG &amp;&amp; not PC2S.C2SG &amp;&amp; not PB2R.B2RG &amp;&amp; not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp;
 
 (not PC3R.C3RG | (not PC4R.C4RG &amp;&amp; not PC4S.C4SG &amp;&amp; not PB4R.B4RG &amp;&amp; not PB4S.B4SG &amp;&amp; not PB4L.B4LG)) &amp;&amp;
 
@@ -2017,7 +2015,7 @@ PB4L, PB4S, PB4R;
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( (not PC1S.C1SG | (not PC2R.C2RG &amp;&amp; not PB2R.B2RG)) &amp;&amp; 
+			<formula>E[] ( (not PC1S.C1SG | (not PC2R.C2RG &amp;&amp; not PB2R.B2RG)) &amp;&amp; 
 
 (not PC3S.C3SG | (not PC4R.C4RG &amp;&amp; not PB4R.B4RG)) &amp;&amp;
 
@@ -2029,13 +2027,13 @@ PB4L, PB4S, PB4R;
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not (PB1R.B1RG &amp;&amp; PC3R.C3RG) &amp;&amp; not (PB3R.B3RG &amp;&amp; PC2R.C2RG) &amp;&amp; not (PB2R.B2RG &amp;&amp; PC4R.C4RG) &amp;&amp; not (PB4R.B4RG &amp;&amp; PC1R.C1RG) )
+			<formula>E[] ( not (PB1R.B1RG &amp;&amp; PC3R.C3RG) &amp;&amp; not (PB3R.B3RG &amp;&amp; PC2R.C2RG) &amp;&amp; not (PB2R.B2RG &amp;&amp; PC4R.C4RG) &amp;&amp; not (PB4R.B4RG &amp;&amp; PC1R.C1RG) )
 			</formula>
 			<comment>S6.5 (conditions when Bir turns green): green lights of Bir and Cjr must not occur concurrently.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( (not PB1S.B1SG | (not PC3S.C3SG &amp;&amp; not PC3R.C3RG &amp;&amp; not PB3S.B3SG)) &amp;&amp;
+			<formula>E[] ( (not PB1S.B1SG | (not PC3S.C3SG &amp;&amp; not PC3R.C3RG &amp;&amp; not PB3S.B3SG)) &amp;&amp;
 
 (not PB3S.B3SG | (not PC2S.C2SG &amp;&amp; not PC2R.C2RG &amp;&amp; not PB2S.B2SG)) &amp;&amp; 
 
@@ -2047,7 +2045,7 @@ PB4L, PB4S, PB4R;
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( (not PB1L.B1LG |(not PB3S.B3SG &amp;&amp; not PB3L.B3LG)) &amp;&amp; 
+			<formula>E[] ( (not PB1L.B1LG |(not PB3S.B3SG &amp;&amp; not PB3L.B3LG)) &amp;&amp; 
 
 (not PB3L.B3LG | (not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp;
 
@@ -2059,7 +2057,7 @@ PB4L, PB4S, PB4R;
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( (not PC1R.C1RG | (not PC3R.C3RG &amp;&amp; not PB3R.B3RG &amp;&amp; not PB3S.B3SG &amp;&amp; not PB3L.B3LG)) &amp;&amp; 
+			<formula>E[] ( (not PC1R.C1RG | (not PC3R.C3RG &amp;&amp; not PB3R.B3RG &amp;&amp; not PB3S.B3SG &amp;&amp; not PB3L.B3LG)) &amp;&amp; 
 
 (not PC3R.C3RG | (not PC2R.C2RG &amp;&amp; not PB2R.B2RG &amp;&amp; not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp; 
 
@@ -2073,7 +2071,7 @@ PB4L, PB4S, PB4R;
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( (not PC1S.C1SG | (not PC3S.C3SG &amp;&amp; not PC3R.C3RG &amp;&amp; not PB3R.B3RG &amp;&amp; not PB3S.B3SG &amp;&amp; not PB3L.B3LG)) &amp;&amp;
+			<formula>E[] ( (not PC1S.C1SG | (not PC3S.C3SG &amp;&amp; not PC3R.C3RG &amp;&amp; not PB3R.B3RG &amp;&amp; not PB3S.B3SG &amp;&amp; not PB3L.B3LG)) &amp;&amp;
 
 (not PC3S.C3SG | (not PC2S.C2SG &amp;&amp; not PC2R.C2RG &amp;&amp; not PB2R.B2RG &amp;&amp; not PB2S.B2SG &amp;&amp; not PB2L.B2LG)) &amp;&amp; 
 
@@ -2088,7 +2086,7 @@ PB4L, PB4S, PB4R;
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; (not (PC1S.C1SG &amp;&amp; PB1L.B1LG) &amp;&amp; not (PC1R.C1RG &amp;&amp; PB1L.B1LG) &amp;&amp; not (PC1R.C1RG &amp;&amp; PB1S.B1SG) &amp;&amp;  
+			<formula>E[] (not (PC1S.C1SG &amp;&amp; PB1L.B1LG) &amp;&amp; not (PC1R.C1RG &amp;&amp; PB1L.B1LG) &amp;&amp; not (PC1R.C1RG &amp;&amp; PB1S.B1SG) &amp;&amp;  
  not (PC2S.C2SG &amp;&amp; PB2L.B2LG) &amp;&amp; not(PC2R.C2RG &amp;&amp; PB2L.B2LG) &amp;&amp; not(PC2R.C2RG &amp;&amp; PB2S.B2SG) &amp;&amp; 
 not (PC3S.C3SG &amp;&amp; PB3L.B3LG) &amp;&amp; not(PC3R.C3RG &amp;&amp; PB3L.B3LG) &amp;&amp; not(PC3R.C3RG &amp;&amp; PB3S.B3SG) &amp;&amp;
 not(PC4S.C4SG &amp;&amp; PB4L.B4LG) &amp;&amp; not(PC4R.C4RG &amp;&amp; PB4L.B4LG) &amp;&amp; not(PC4R.C4RG &amp;&amp; PB4S.B4SG) )
@@ -2098,127 +2096,127 @@ not(PC4S.C4SG &amp;&amp; PB4L.B4LG) &amp;&amp; not(PC4R.C4RG &amp;&amp; PB4L.B4L
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB4R.B4RR &amp;&amp; PB4R.B4RG ))
+			<formula>A[] ( not ( PB4R.B4RR &amp;&amp; PB4R.B4RG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB3R.B3RR &amp;&amp; PB3R.B3RG ))
+			<formula>A[] ( not ( PB3R.B3RR &amp;&amp; PB3R.B3RG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB2R.B2RR &amp;&amp; PB2R.B2RG ))
+			<formula>A[] ( not ( PB2R.B2RR &amp;&amp; PB2R.B2RG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB1R.B1RR &amp;&amp; PB1R.B1RG ))
+			<formula>A[] ( not ( PB1R.B1RR &amp;&amp; PB1R.B1RG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB4S.B4SR &amp;&amp; PB4S.B4SG ))
+			<formula>A[] ( not ( PB4S.B4SR &amp;&amp; PB4S.B4SG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB3S.B3SR &amp;&amp; PB3S.B3SG ))
+			<formula>A[] ( not ( PB3S.B3SR &amp;&amp; PB3S.B3SG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB2S.B2SR &amp;&amp; PB2S.B2SG ))
+			<formula>A[] ( not ( PB2S.B2SR &amp;&amp; PB2S.B2SG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB1S.B1SR &amp;&amp; PB1S.B1SG ))
+			<formula>A[] ( not ( PB1S.B1SR &amp;&amp; PB1S.B1SG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB1S.B1SR &amp;&amp; PB1S.B1SG ))
+			<formula>A[] ( not ( PB1S.B1SR &amp;&amp; PB1S.B1SG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB4L.B4LR &amp;&amp; PB4L.B4LG ))
+			<formula>A[] ( not ( PB4L.B4LR &amp;&amp; PB4L.B4LG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB3L.B3LR &amp;&amp; PB3L.B3LG ))
+			<formula>A[] ( not ( PB3L.B3LR &amp;&amp; PB3L.B3LG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB2L.B2LR &amp;&amp; PB2L.B2LG ))
+			<formula>A[] ( not ( PB2L.B2LR &amp;&amp; PB2L.B2LG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PB1L.B1LR &amp;&amp; PB1L.B1LG ))
+			<formula>A[] ( not ( PB1L.B1LR &amp;&amp; PB1L.B1LG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PC4R.C4RR &amp;&amp; PC4R.C4RG ))
+			<formula>A[] ( not ( PC4R.C4RR &amp;&amp; PC4R.C4RG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PC3R.C3RR &amp;&amp; PC3R.C3RG ))
+			<formula>A[] ( not ( PC3R.C3RR &amp;&amp; PC3R.C3RG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PC2R.C2RR &amp;&amp; PC2R.C2RG ))
+			<formula>A[] ( not ( PC2R.C2RR &amp;&amp; PC2R.C2RG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PC1R.C1RR &amp;&amp; PC1R.C1RG ))
+			<formula>A[] ( not ( PC1R.C1RR &amp;&amp; PC1R.C1RG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PC4S.C4SR &amp;&amp; PC4S.C4SG ))
+			<formula>A[] ( not ( PC4S.C4SR &amp;&amp; PC4S.C4SG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PC3S.C3SR &amp;&amp; PC3S.C3SG ))
+			<formula>A[] ( not ( PC3S.C3SR &amp;&amp; PC3S.C3SG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PC2S.C2SR &amp;&amp; PC2S.C2SG ))
+			<formula>A[] ( not ( PC2S.C2SR &amp;&amp; PC2S.C2SG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
 		</query>
 		<query>
-			<formula>A&lt;&gt; ( not ( PC1S.C1SR &amp;&amp; PC1S.C1SG ))
+			<formula>A[] ( not ( PC1S.C1SR &amp;&amp; PC1S.C1SG ))
 			</formula>
 			<comment>S1 : Pada setiap lampu lalu lintas, lampu merah dan hijau tidak pernah menyala bersamaan.
 			</comment>
